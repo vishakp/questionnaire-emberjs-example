@@ -1,15 +1,11 @@
 import Route from '@ember/routing/route';
-import { inject as service } from '@ember/service';
-
+import fetch from 'fetch';
 export default class QuestionairRoute extends Route {
-  @service('questionair') qs;
-
-  async modal() {
-    const { questions } = await this.qs.getQuestions();
-    return questions;
-  }
-
-  setupController(controller, model) {
-    super.setupController(controller, model);
+  async model() {
+    const url = '/data/questionnaire.json';
+    const response = await fetch(url);
+    const { questionnaire } = await response.json();
+    console.log(questionnaire);
+    return questionnaire;
   }
 }

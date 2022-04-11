@@ -1,0 +1,8 @@
+.multi-choice{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    > label {
+        margin: 5px;
+    }
+}

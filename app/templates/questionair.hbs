@@ -1,2 +1,16 @@
-{{page-title "Questionair"}}
-{{outlet}}
+<div class="container">
+    <main class="questionair">
+        <form>
+            <div class="question">
+                <QuestionDetails @question={{hash headline=this.model.name description=this.model.description }}>
+                </QuestionDetails>
+                <div class="action">
+                    <button class="button">OK</button>
+                </div>
+            </div>
+            {{#each this.model.questions as |question|}}
+            <Question @question={{question}} />
+            {{/each}}
+        </form>
+    </main>
+</div>

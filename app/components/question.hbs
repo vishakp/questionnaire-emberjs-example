@@ -1,0 +1,16 @@
+<div class="question">
+    <QuestionDetails @question={{this.questionDetails}} />
+    {{#if (eq this.questionType "multiple-choice")}}
+    <MultiChoice @isMultiAnswer={{this.multiAnswer}} @choices={{@question.choices}}>
+        multichoice works!
+    </MultiChoice>
+    {{else if (eq this.questionType "text")}}
+    <FreeText>
+        free text works!
+    </FreeText>
+    {{/if}}
+
+    <div class="action">
+        <button class="button">OK</button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="multi-choice">
+    {{#unless @multiAnswer}}
+    {{#each @choices as |choice| }}
+    <label>
+        <input type="radio" value={{choice.value}} />
+        {{choice.label}}
+    </label>
+    {{/each}}
+    {{/unless}}
+</div>

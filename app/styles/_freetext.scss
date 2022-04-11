@@ -1,0 +1,19 @@
+.free-text {
+    width: 100%;
+    text-align: center;
+    .free-text-input {
+        &:focus {
+            border: 0 none #ccc;
+            border-bottom: 2px solid #ccc !important;
+        }
+
+        background: transparent;
+        border: 0 none #ccc;
+        border-bottom: 2px solid #ccc !important;
+        height: 30px;
+        padding: 5px;
+        width: 80%;
+        color: #ccc;    
+        font-size: 18px;
+    }
+}
