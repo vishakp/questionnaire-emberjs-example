@@ -2,7 +2,7 @@ import Service from '@ember/service';
 
 export default class QuestionairService extends Service {
   url = '/data/questionnaire.json';
-  answers;
+  answers = [];
   async getQuestions() {
     const response = await fetch(this.url);
     const { data } = await response.json();
@@ -10,10 +10,11 @@ export default class QuestionairService extends Service {
     return data;
   }
 
-  saveAnswer(questionId, answer){
-      this.answers.push({
-          questionId,
-          answer
-      })
+  saveAnswer(questionId, answer) {
+    this.answers.push({
+      questionId,
+      answer,
+    });
+    console.log(this.answers);
   }
 }

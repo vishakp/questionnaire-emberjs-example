@@ -4,7 +4,8 @@
 @import "./multichoice";
 @import "./freetext";
 
-html,body{
+html,
+body {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -28,16 +29,134 @@ html,body{
     background-color: rgb(255, 255, 255);
     color: rgb(128, 128, 128);
     border-radius: 4px;
+    min-width: 80px;
 }
 
-// .reveal {
-//     position: relative;
-//     transform: translateY(150px);
-//     opacity: 0;
-//     transition: 1s all ease;
-// }
+.success-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // height: auto;
+    margin: 0;
+    min-height: 24em;
+}
 
-// .reveal.active {
-//     transform: translateY(0);
-//     opacity: 1;
-// }
+.success-item {
+    max-width: 100%;
+}
+
+.success-fixed {
+    flex: none;
+    max-width: 100%;
+}
+
+#success-icon-fill {
+    fill: green;
+}
+
+.success-icon {
+    position: relative;
+    left: 43px;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    .navigation-button {
+        width: 100px;
+        display: flex;
+        margin: 10px;
+
+        .arrow {
+            background: rgb(255, 255, 255);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            &.top {
+                border-radius: 10px 0 0 10px;
+
+                &::before,
+                &::after {
+                    top: 0;
+                    border-top: solid 2px #ccc;
+                    margin-top: 13px;
+                }
+
+                &::before {
+                    left: -50%;
+                    transform: rotate(-45deg);
+                    transform-origin: right top;
+                }
+
+                &::after {
+                    left: 50%;
+                    transform: rotate(45deg);
+                    transform-origin: left top;
+                }
+            }
+
+            &.bottom {
+                border-radius: 0 10px 10px 0;
+
+                &::before,
+                &::after {
+                    bottom: 0;
+                    border-bottom: solid 2px #ccc;
+                    margin-bottom: 13px;
+                }
+
+                &::before {
+                    left: -50%;
+                    transform: rotate(45deg);
+                    transform-origin: right bottom;
+                }
+
+                &::after {
+                    left: 50%;
+                    transform: rotate(-45deg);
+                    transform-origin: left bottom;
+                }
+            }
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+            }
+
+            &.right {
+
+                &::before,
+                &::after {
+                    border-right: solid 2px #ccc;
+                    right: 0;
+                }
+
+                &::before {
+                    top: -50%;
+                    transform: rotate(-45deg);
+                    transform-origin: right bottom;
+                }
+
+                &::after {
+                    top: 50%;
+                    transform: rotate(45deg);
+                    transform-origin: right top;
+                }
+
+            }
+
+            &.top,
+            &.bottom {
+                width: 43px;
+                height: 47px;
+                margin-right: 1px;
+            }
+        }
+    }
+}

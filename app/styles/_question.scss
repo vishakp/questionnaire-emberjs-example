@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
 
     div.reveal {
         position: relative;
@@ -19,7 +18,11 @@
     div {
         width: 80%
     }
+    .error{
+        color: red;
+    }
     .action{
         margin-top: 20px;
+        text-align: center;
     }
 }

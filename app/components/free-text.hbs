@@ -1,3 +1,6 @@
 <div class="free-text">
-    <input class="free-text-input" type="text" value="">
+    <input class="free-text-input" type="text" 
+        value={{@value}} 
+        {{on "change" this.setAnswer}}
+        placeholder="Geben Sie Ihre Antwort ein">
 </div>
