@@ -1,15 +1,15 @@
 <div class="container">
-    <main class="questionair">
+    <main class="questionair" id="questionair">
         <form>
             <div class="question">
                 <QuestionDetails @question={{hash headline=this.model.name description=this.model.description }}>
                 </QuestionDetails>
                 <div class="action">
-                    <button class="button">OK</button>
+                    <button class="button" {{on "click" this.next}}>OK</button>
                 </div>
             </div>
             {{#each this.model.questions as |question|}}
-            <Question @question={{question}} />
+            <Question @question={{question}} @next={{this.next}}/>
             {{/each}}
         </form>
     </main>

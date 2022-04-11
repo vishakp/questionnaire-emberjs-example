@@ -2,7 +2,8 @@
     {{#unless @multiAnswer}}
     {{#each @choices as |choice| }}
     <label>
-        <input type="radio" value={{choice.value}} />
+        <input type="radio" value={{choice.value}} checked={{eq choice.value @value}}
+        {{on "click" (fn @output choice.value) }} />
         {{choice.label}}
     </label>
     {{/each}}
